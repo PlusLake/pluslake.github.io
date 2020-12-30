@@ -3,7 +3,9 @@
         <Sidebar v-if="!isMobile" :menu="menu"/>
         <MobileTopbar v-if="isMobile" :menu="menu"/>
         <div class="router-view">
-            <router-view/>
+            <div class="router-view-inner">
+                <router-view/>
+            </div>
         </div>
         <div style="clear: both"/>
     </div>
@@ -43,17 +45,28 @@ export default {
 
 <style>
 .router-view {
+    width: 100%;
     height: calc(100% - 64px);
-    background-image: 
-        radial-gradient(#FCEEF5 10%, transparent 50%),
-        radial-gradient(#FCEEF5 10%, transparent 50%);
-    background-size: 16px 16px;
-    background-position: 8px 8px, 16px 16px;
+
+    background-size: auto auto;
+    background-color: #FFF;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, #FCEEF5 10px, #FCEEF5 20px );
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+
+.router-view-inner {
+    width: 100%;
+    max-width: 1280px;
+    text-align: left;
+    display: inline-block;
 }
 
 @media screen and (min-width: 768px) {
     .router-view {
         height: 100%;
+        width: calc(100% - 192px);
     }
 }
 </style>

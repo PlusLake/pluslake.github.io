@@ -37,24 +37,23 @@ export default {
     width: 192px;
     height: 100%;
     background-color: #FCEEF5;
-    float: left;
+    display: inline-block;
 }
 .sidebar .top {
     background-color: #FFF;
-    padding-bottom: 8px;
+    padding-bottom: 0px;
 }
 .sidebar .top .top-inner {
+    border-bottom: #F3BAD6 solid 4px;
     height: 64px;
-    border-bottom: 4px solid #FCEEF5;
     color: #F3BAD6;
     font-family: "medium";
     font-size: 32px;
     text-align: center;
     line-height: 64px;
-    
 }
 .sidebar .inner {
-    height: calc(100% - 80px);
+    height: calc(100% - 70px);
     border-right: 8px solid #FFF;
     margin-right: 8px;
 }
