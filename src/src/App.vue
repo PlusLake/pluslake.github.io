@@ -1,24 +1,28 @@
 <template>
     <div id="main">
-        <Sidebar v-if="!isMobile" :menu="menu"/>
-        <MobileTopbar v-if="isMobile" :menu="menu"/>
-        <div class="router-view">
-            <div class="router-view-inner">
-                <router-view/>
+        <div>Nothing here yet!</div>
+        <div v-if="false">
+            <Sidebar v-if="!isMobile" :menu="menu" />
+            <MobileTopbar v-if="isMobile" :menu="menu" />
+            <div class="router-view">
+                <div class="router-view-inner">
+                    <router-view />
+                </div>
             </div>
+            <div style="clear: both" />
         </div>
-        <div style="clear: both"/>
     </div>
 </template>
 
 <script>
-import Sidebar from "./components/Sidebar.vue"
-import MobileTopbar from "./components/mobile/MobileTopbar.vue"
+import Sidebar from "./components/Sidebar.vue";
+import MobileTopbar from "./components/mobile/MobileTopbar.vue";
 
 export default {
     name: "App",
     components: {
-        Sidebar, MobileTopbar,
+        Sidebar,
+        MobileTopbar,
     },
     computed: {
         menu() {
@@ -33,14 +37,14 @@ export default {
     data() {
         return {
             isMobile: window.innerWidth < 768,
-        }
+        };
     },
     created() {
         addEventListener("resize", () => {
             this.isMobile = window.innerWidth < 768;
         });
     },
-}
+};
 </script>
 
 <style>
@@ -49,8 +53,14 @@ export default {
     height: calc(100% - 64px);
 
     background-size: auto auto;
-    background-color: #FFF;
-    background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, #FCEEF5 10px, #FCEEF5 20px );
+    background-color: #fff;
+    background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        #fceef5 10px,
+        #fceef5 20px
+    );
     display: inline-block;
     vertical-align: top;
     text-align: center;
