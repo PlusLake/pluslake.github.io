@@ -1,5 +1,5 @@
 <template>
-    <div id="main">
+    <div id="main" v-if="false">
         <div>Nothing here yet!</div>
         <div v-if="false">
             <Sidebar v-if="!isMobile" :menu="menu" />
